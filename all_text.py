@@ -41,7 +41,7 @@ if response.status_code == 200:
                     add_=find_word(KEYWORDS,items.text)
         sleep(2)       
         if add_:
-            print(article_time, '\n', article_head,'\n', link, '\n')
+            print(f'<{article_time}> - <{article_head}> - <{link}>')
 
 else:
     print('Страница не найдена')

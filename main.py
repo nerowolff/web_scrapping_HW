@@ -25,7 +25,7 @@ if response.status_code == 200:
 
     articles_list = soup.select('article.tm-articles-list__item')
     for article in articles_list:
-        sleep(3)
+        sleep(2)
         add_= False
         article_head = article.select_one('h2').text
         add_=find_word(KEYWORDS,article_head)
@@ -36,7 +36,7 @@ if response.status_code == 200:
         for art in article_preview_div:
             add_= find_word(KEYWORDS,art.text )
         if add_:
-            print(article_time, '\n', article_head,'\n', link)
+            print(f'<{article_time}> - <{article_head}> - <{link}>')
 
 else:
     print('Страница не найдена')
